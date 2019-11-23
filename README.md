@@ -85,7 +85,7 @@ Probably it would have been smart to reverse `radio-auth.so` and figure out what
 
 Because we were still getting pwned, to mitigate it fully I replaced the entire JWT signing/parsing mechanism. This took a bit too long though, and most likely they were using another vulnerability.
 
-The only optimization I did here was to pipeline the process. In the end I just ran 4 `exfil.py` worker scripts on different target lists. It could also happen that a restart of any of the target services would have 
+The only optimization I did here was to pipeline the process. In the end I just ran 4 `exfil.py` worker scripts on different target lists. 
 
 ## Another vuln
 
