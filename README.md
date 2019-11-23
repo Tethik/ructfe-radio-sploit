@@ -23,7 +23,7 @@ generate_key $session_key
 
 Problem here is the `"$(date +\"%s\")$key_path"` that is fed to sha256sum. It's easy to bruteforce too, only requiring a few thousand offline attempts.
 
-In turn the code that generated the actual JWT was this module, which suspiciously called a `radio-auth.so` plugin.
+In turn the code that generated the actual JWT was this module, which suspiciously called a `radio-auth.so` plugin. This was where the above secret was passed in to.
 ```go
 package auth
 
