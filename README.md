@@ -96,3 +96,13 @@ func (p *Playlist) HS() string {
 	return fmt.Sprintf("%x", sha256.Sum256([]byte(fmt.Sprintf("playlist:{%d}:{%t}:{%d}:{&b}", p.ID, p.Private, p.UserID))))
 }
 ```
+
+## Learnings
+Since this was my first A/D CTF, I learned some things which I could improve or prepare for in the next competition:
+
+1. Try to avoid tunnelvision. I spent most of the time focused on my own vuln while I missed the probably more obvious one. We lost more flags than we stole from this. Patch first, then exploit.
+2. Do be a bit stubborn though, I feel like my focus here was worthwhile as I did still score an ok amount of points.
+3. Come prepared with a way to enumerate exploits over many hosts at once. This would have saved me a ton of time and would have scored us a lot more points. 
+5. Do figure out what the exact rules are for defense. We had some very noisy neighbours that were bringing down our services. I wasn't sure if we were allowed to straight up block opponents or rate limit or delete old data from the databases. What are our options here?
+6. Probably interact more with the team. If we as a team were more prepared we could have likely delegated to different roles once a vulnerability was discovered. E.g. one person does exploit dev and another does patching. Maybe a third watches the logs. However our team was small and generally we were just doing it for fun.
+
